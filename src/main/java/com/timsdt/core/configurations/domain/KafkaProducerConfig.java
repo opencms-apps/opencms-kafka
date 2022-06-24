@@ -11,6 +11,10 @@ public class KafkaProducerConfig extends Configuration {
         super(host, port, topics);
     }
 
+    public KafkaProducerConfig(String host, String port, String groupId, String topics) {
+        super(host, port, groupId, topics);
+    }
+
     public Type getType() {
         return Type.PRODUCER;
     }

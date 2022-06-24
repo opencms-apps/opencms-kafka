@@ -10,6 +10,10 @@ public class KafkaConsumerConfig extends Configuration {
         super(host, port, groupId, topics);
     }
 
+    public KafkaConsumerConfig(String host, String port, String topics) {
+        super(host, port, topics);
+    }
+
     public Type getType() {
         return Type.CONSUMER;
     }

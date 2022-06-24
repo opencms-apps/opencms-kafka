@@ -67,7 +67,7 @@ public class KafkaConfiguration extends A_CmsXmlConfiguration implements I_CmsXm
         digester.addCallParam("*/kafka/producer", 1, "port");
         digester.addCallParam("*/kafka/producer", 2, "topics");
 
-        digester.addCallMethod("*/kafka/consumer", "setupConsumer", 3);
+        digester.addCallMethod("*/kafka/consumer", "setupConsumer", 4);
         digester.addCallParam("*/kafka/consumer", 0, "host");
         digester.addCallParam("*/kafka/consumer", 1, "port");
         digester.addCallParam("*/kafka/consumer", 2, "groupId");
