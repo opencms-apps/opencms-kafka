@@ -37,6 +37,7 @@ dependencies {
 
     implementation "org.opencms:opencms-core:${opencms_version}"
     implementation "org.opencms:opencms-gradle-plugin:${opencms_gradle_version}"
+    implementation "org.apache.kafka:kafka-clients:${kafka_version}"
 
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'

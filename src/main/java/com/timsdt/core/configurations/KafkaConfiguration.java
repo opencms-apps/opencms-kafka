@@ -5,7 +5,6 @@ import org.dom4j.Element;
 import org.opencms.configuration.A_CmsXmlConfiguration;
 import org.opencms.configuration.I_CmsXmlConfigurationWithUpdateHandler;
 import org.opencms.file.CmsObject;
-import org.opencms.main.CmsLog;
 import org.opencms.main.OpenCms;
 
 import java.io.File;
@@ -71,7 +70,8 @@ public class KafkaConfiguration extends A_CmsXmlConfiguration implements I_CmsXm
         digester.addCallMethod("*/kafka/consumer", "setupConsumer", 3);
         digester.addCallParam("*/kafka/consumer", 0, "host");
         digester.addCallParam("*/kafka/consumer", 1, "port");
-        digester.addCallParam("*/kafka/consumer", 2, "topics");
+        digester.addCallParam("*/kafka/consumer", 2, "groupId");
+        digester.addCallParam("*/kafka/consumer", 3, "topics");
 
     }
 

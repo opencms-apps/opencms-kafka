@@ -11,11 +11,12 @@
         <!ATTLIST consumer
                 host CDATA #REQUIRED
                 port CDATA #IMPLIED
+                groupId CDATA #IMPLIED
                 topics CDATA #IMPLIED>
         ]>
 <opencms>
     <kafka>
         <producer host="localhost" port="9200" topics="opencms-event" />
-        <consumer host="localhost" port="9200" topics="" />
+        <consumer host="localhost" port="9200" groupId="opencms-kafka-group-main" topics="" />
     </kafka>
 </opencms>
