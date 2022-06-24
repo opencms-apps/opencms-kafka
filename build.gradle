@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group 'com.timsdt.core'
+version '1.0'
+
+repositories {
+    mavenLocal()
+    if (project.hasProperty('additional_repositories')){
+        additional_repositories.split(';').each{ repo ->
+            maven { url repo }
+        }
+    }
+    mavenCentral()
+    maven {
+        url "http://software.rescarta.org/nexus/content/repositories/thirdparty/"
+        allowInsecureProtocol = true
+    }
+    maven {
+        url "https://maven.restlet.talend.com"
+    }
+    maven {
+        url "http://localhost/repo"
+        allowInsecureProtocol = true
+    }
+    maven {
+        url "https://nexus.nuiton.org/nexus/content/groups/releases/"
+    }
+    maven {
+        url "http://maven.vaadin.com/vaadin-addons"
+        allowInsecureProtocol = true
+    }
+}
+
+dependencies {
+
+    implementation "org.opencms:opencms-core:${opencms_version}"
+    implementation "org.opencms:opencms-gradle-plugin:${opencms_gradle_version}"
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
